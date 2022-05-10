@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "baseUrl": "src",
+    "checkJs": false,
+    "declaration": true,
+    "lib": [
+      "es6",
+      "dom",
+      "esnext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules/*",
+    "node_modules/@types/*"
+  ],
+  "paths": {
+    "@generator/*": ["*"]
+  }
+}

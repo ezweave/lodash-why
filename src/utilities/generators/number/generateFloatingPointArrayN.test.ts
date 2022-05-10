@@ -1,4 +1,4 @@
-import { generateFloatingPointArrayN } from "./generateFloatingPointArrayN";
+import { generateFloatingPointArrayN } from './generateFloatingPointArrayN';
 
 describe('generateFloatingPointArrayN', () => {
   it('generates an n-sized array of randomly generated floating point numbers', () => {

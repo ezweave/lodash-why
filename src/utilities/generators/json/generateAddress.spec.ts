@@ -6,7 +6,7 @@ import {
   getRandomStreetAddress, 
   getRandomStreetType, 
   StreetType,
-} from "./generateAddress"
+} from './generateAddress';
 
 describe('getRandomCity', () => {
   it('gets two random cities', () => {
@@ -23,7 +23,7 @@ describe('getRandomStreetAddress', () => {
     const streetAddress = getRandomStreetAddress();
     const inRange = streetAddress >= 1 && streetAddress <= 9999;
     expect(inRange).toEqual(true);
-  })
+  });
 });
 
 describe('getRandomStreetType', () => {
@@ -31,7 +31,7 @@ describe('getRandomStreetType', () => {
     const streetType = getRandomStreetType();
     expect(
       StreetType.find(name => name === streetType)
-    ).toBeTruthy();;
+    ).toBeTruthy();
   });
 });
 
@@ -47,12 +47,12 @@ describe('getRandomGeneratedStreetName', () => {
   it('generates a random street name', () => {
     const streetName = getRandomGeneratedStreetName();
     expect(streetName).toBeTruthy();
-  })
+  });
 });
 
 describe('generateAddress', () => {
   it('generates a realistic random address', () => {
     const address = generateAddress();
     expect(typeof address === 'object').toEqual(true);
-  })
-})
+  });
+});

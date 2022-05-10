@@ -11,7 +11,8 @@
     "lint.fix": "eslint --fix './src/**/*.ts'",
     "lint": "eslint './src/**/*.ts'",
     "dev": "ts-node src/index.ts",
-    "test": "jest -i"
+    "test": "jest -i",
+    "generate.users": "yarb build && "
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
@@ -29,6 +30,7 @@
     "typescript": "^4.1.5"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "country-state-city": "^3.0.1",
     "lodash": "^4.17.11",
     "path": "^0.12.7"

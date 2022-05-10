@@ -1,7 +1,8 @@
-import { Address } from '../../../types';
 import { City }  from 'country-state-city';
 import { ICity } from 'country-state-city/dist/lib/interface';
 import { flatMap, flow, map, random, size, union } from 'lodash';
+
+import { Address } from '../../../types';
 
 const cities = City.getCitiesOfCountry('US') || [];
 
@@ -16,8 +17,8 @@ export const getRandomCity = flow(
   }: ICity)=> ({
    countryCode,
    name,
-   stateCode 
-  }),
+   stateCode, 
+  })
 );
 
 export const getRandomStreetAddress = () => random(1, 9999);
@@ -33,7 +34,7 @@ export const StreetType = [
 export const getRandomStreetType = flow(
   () => size(StreetType),
   n => random(0, n),
-  i => StreetType[i],
+  i => StreetType[i]
 );
 
 const NumericStreetNames = map(
@@ -51,7 +52,7 @@ const NamedStreetNameRoots = [
   'Martin Luther King',
   'Oak',
   'Peachtree',
-  'Smith'
+  'Smith',
 ];
 
 interface GenerateAllNamedStreetNamePermutations {
@@ -63,7 +64,7 @@ export const generateAllNamedStreetNamePermutations: GenerateAllNamedStreetNameP
     NamedStreetNameRoots,
     name => map(StreetType, streetType => `${name} ${streetType}`)
   ),
-  flatMap,
+  flatMap
 );
 
 const GeneratedStreetNames = union(
@@ -74,7 +75,7 @@ const GeneratedStreetNames = union(
 export const getRandomGeneratedStreetName = flow(
   () => size(GeneratedStreetNames),
   n => random(0, n),
-  i => GeneratedStreetNames[i], 
+  i => GeneratedStreetNames[i] 
 );
 
 export const getRandomAddress = () => `${getRandomStreetAddress()} ${getRandomGeneratedStreetName()}`;
@@ -91,5 +92,5 @@ export const generateAddress = (): Address => {
     country,
     state,
     street: getRandomAddress(),
-  }
-}
+  };
+};

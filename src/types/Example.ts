@@ -1,6 +1,6 @@
-import { User } from "./User"
-import { Result } from "./Result"
+import { Result } from './Result';
+import { User } from './User';
 
 export interface Example {
-  (user: Array<User>): Result 
+  (users: Array<User>): Result 
 }

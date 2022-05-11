@@ -1,7 +1,7 @@
 import { users } from '../../index';
-import { sortByLastNameAlphabetical } from './sortingExample';
+import { sortByLastNameAlphabetical } from './sortByLastNameAlphabetical';
 
-describe('sortingExample', () => {
+describe('sortByLastNameAlphabetical', () => {
   it('sorts with two methods', () => {
     const result = sortByLastNameAlphabetical(users);
     const {

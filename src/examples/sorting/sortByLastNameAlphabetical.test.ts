@@ -3,7 +3,7 @@ import { sortByLastNameAlphabetical } from './sortByLastNameAlphabetical';
 
 describe('sortByLastNameAlphabetical', () => {
   it('sorts with two methods', () => {
-    const result = sortByLastNameAlphabetical(users);
+    const result = sortByLastNameAlphabetical(users, 1);
     const {
       jsTime,
       lodashTime,

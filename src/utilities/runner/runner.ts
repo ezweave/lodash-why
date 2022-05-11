@@ -1,30 +1,46 @@
+import { sum, times } from 'lodash';
 import { performance } from 'perf_hooks';
 
-import { Example, ExampleFunction, User } from '../../types';
+import { ExampleFunction, Result, SolutionIdiom, User } from '../../types';
 import { getElapsedTime } from '../math/getElapsedTime';
 
-export interface Runner<T> {
-  (lodashFunction: ExampleFunction<T>, jsFunction: ExampleFunction<T>): Example
+const runFunctionAndGetTime = <T>(func: ExampleFunction<T>, users: Array<User>) => {
+  const startTime = performance.now();
+  func(users);
+  const endTime = performance.now();
+  return getElapsedTime(startTime, endTime);
 }
 
-export const runner: Runner<User> = (
-  lodashFunction,
-  jsFunction
-) => (
-  users
-) => {
-  const lodashStartTime = performance.now();
-  lodashFunction(users);
-  const lodashEndTime = performance.now();
-  const lodashTime = getElapsedTime(lodashStartTime, lodashEndTime);
+const runFunctionNTimeAndGetAverageTime = <T>(
+  func: ExampleFunction<T>, 
+  users: Array<User>, 
+  n: number) => {
+  const runTimes = times(n, () => runFunctionAndGetTime<T>(func, users));
+  const total = sum(runTimes)
+  return Number((total / n).toFixed(4));
+}
 
-  const jsStartTime = performance.now();
-  jsFunction(users);
-  const jsEndTime = performance.now();
-  const jsTime = getElapsedTime(jsStartTime, jsEndTime);
+
+export const runner = <T>(
+  name: string,
+  lodashFunction: ExampleFunction<T>,
+  jsFunction: ExampleFunction<T>
+) => (
+  users: Array<User>,
+  numberOfRuns: number,
+  priority: (keyof typeof SolutionIdiom) = SolutionIdiom.LODASH,
+): Result => {
+  console.log('Priority', priority); 
+  const jsTime = runFunctionNTimeAndGetAverageTime(jsFunction, users, numberOfRuns);
+  const lodashTime = runFunctionNTimeAndGetAverageTime(lodashFunction, users, numberOfRuns);
+
+  const winner = lodashTime < jsTime ? SolutionIdiom.LODASH : SolutionIdiom.JAVASCRIPT;
 
   return {
+    name,
     jsTime,
     lodashTime,
+    numberOfRuns,
+    winner,
   };
 };

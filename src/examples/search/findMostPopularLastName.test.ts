@@ -1,10 +1,14 @@
 import users from '../../data/users.json';
-import { findMostPopularLastNameWithLodash } from './findMostPopularLastName';
+import { 
+  findMostPopularLastNameWithJS, 
+  findMostPopularLastNameWithLodash,
+} from './findMostPopularLastName';
 
-describe('findMostPopularLastNameWithLodash', () => {
-  it('finds the most popular last name', () => {
-    const result = findMostPopularLastNameWithLodash(users);
+describe('findMostPopularLastName', () => {
+  it('finds the most popular last name with both methods and the results are the same', () => {
+    const lodashResult = findMostPopularLastNameWithLodash(users);
+    const jsResult = findMostPopularLastNameWithJS(users);
 
-    console.warn(result);
+    expect(lodashResult).toEqual(jsResult);
   });
 });

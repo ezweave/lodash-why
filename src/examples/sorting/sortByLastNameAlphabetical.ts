@@ -13,6 +13,7 @@ export const sortUsersByLastNameWithJS: ExampleFunction<User> = (
 );
 
 export const sortByLastNameAlphabetical = runner(
+  'sortByLastNameAlphabetical',
   sortUsersByLastNameWithLodash,
   sortUsersByLastNameWithJS
 );

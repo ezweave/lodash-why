@@ -1,5 +1,6 @@
-import { generateUsers } from "utilities/generators/json/generateUsers";
+
+import { generateUsers } from "./utilities/generators/json/generateUsers";
 
 console.warn('Hello, shitbirds');
 
-export const userData = generateUsers();
+export const users = generateUsers();

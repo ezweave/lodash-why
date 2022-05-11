@@ -1,4 +1,4 @@
-import { convertMSToSeconds } from "./convertMSToSeconds";
+import { convertMSToSeconds } from './convertMSToSeconds';
 
 export const getElapsedTime = (
   timeOne: number,

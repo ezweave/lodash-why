@@ -7,11 +7,11 @@ describe('sortingExample', () => {
     console.warn('RESULT', result);
     const {
       jsTime,
-      lodashTime
+      lodashTime,
     } = result;
     expect(jsTime).toBeTruthy();
     expect(lodashTime).toBeTruthy();
     const lodashWins = lodashTime < jsTime;
     expect(lodashWins).toEqual(true);
-  })
-})
+  });
+});

@@ -1,6 +1,7 @@
-import { Result, User } from 'types';
 import { sortBy as sortByFP } from 'lodash/fp';
 import { performance } from 'perf_hooks';
+
+import { Result, User } from '../../types';
 import { getElapsedTime } from '../../utilities';
 
 interface SortUsersByLastName {
@@ -30,5 +31,5 @@ export const sortingExample = (users: Array<User>): Result => {
   return {
     jsTime,
     lodashTime,
-  }
+  };
 };

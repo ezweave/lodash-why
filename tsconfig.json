@@ -9,7 +9,7 @@
       "es6",
       "esnext"
     ],
-    "module": "es2022",
+    "module": "commonjs",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -29,6 +29,6 @@
     "node_modules/@types/*"
   ],
   "paths": {
-    "@generator/*": ["*"]
+    "@why/*": ["*"]
   }
 }

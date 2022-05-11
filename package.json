@@ -6,12 +6,11 @@
   "repository": "git@github.com:ezweave/lodash-why.git",
   "author": "Matt Weaver <ezweave@gmail.com>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "build": "yarn lint && tsc",
     "lint.fix": "eslint --fix './src/**/*.ts'",
     "lint": "eslint './src/**/*.ts'",
-    "dev": "ts-node src/index.ts",
+    "run.local": "ts-node ./src/index.ts",
     "test": "jest -i",
     "generate.users": "node --experimental-specifier-resolution=node --loader ts-node/esm src/utilities/generators/files/generateUserJSON.ts"
   },

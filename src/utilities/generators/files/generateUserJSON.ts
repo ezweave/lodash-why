@@ -23,7 +23,7 @@ const {
 console.log('Generating user data...');
 
 const getPWD = () => {
-  const __filename = fileURLToPath(import.meta.url);
+  const __filename = fileURLToPath(__dirname);
   return path.dirname(__filename);
 };
 

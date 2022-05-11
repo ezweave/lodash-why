@@ -9,16 +9,16 @@ const runFunctionAndGetTime = <T>(func: ExampleFunction<T>, users: Array<User>) 
   func(users);
   const endTime = performance.now();
   return getElapsedTime(startTime, endTime);
-}
+};
 
 const runFunctionNTimeAndGetAverageTime = <T>(
   func: ExampleFunction<T>, 
   users: Array<User>, 
   n: number) => {
   const runTimes = times(n, () => runFunctionAndGetTime<T>(func, users));
-  const total = sum(runTimes)
+  const total = sum(runTimes);
   return Number((total / n).toFixed(4));
-}
+};
 
 
 export const runner = <T>(
@@ -28,9 +28,9 @@ export const runner = <T>(
 ) => (
   users: Array<User>,
   numberOfRuns: number,
-  priority: (keyof typeof SolutionIdiom) = SolutionIdiom.LODASH,
+  // TODO: do some type of switching between lodash first, js first
+  _priority: (keyof typeof SolutionIdiom) = SolutionIdiom.LODASH
 ): Result => {
-  console.log('Priority', priority); 
   const jsTime = runFunctionNTimeAndGetAverageTime(jsFunction, users, numberOfRuns);
   const lodashTime = runFunctionNTimeAndGetAverageTime(lodashFunction, users, numberOfRuns);
 

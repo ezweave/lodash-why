@@ -3,12 +3,12 @@ import { map } from 'lodash';
 import { map as mapFP } from 'lodash/fp';
 
 import { findMostPopularLastName, sortByLastNameAlphabetical } from './examples';
-import { Result, User, SolutionIdiom } from './types';
+import { Result, SolutionIdiom,User } from './types';
 import { generateUsers } from './utilities/generators/json/generateUsers';
 
-console.warn('Hello, shitbirds', generateUsers.name);
+console.warn('Let\'s see who\'s faster!');
 
-const n = 5;
+const n = 50;
 
 export const users = generateUsers();
 

@@ -1,1 +1,1 @@
-export { sortingExample } from './sorting/sortingExample';
+export { sortByLastNameAlphabetical } from './sorting/sortByLastNameAlphabetical';

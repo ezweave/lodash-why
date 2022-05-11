@@ -1,7 +1,7 @@
 import { sortBy as sortByFP } from 'lodash/fp';
 import { performance } from 'perf_hooks';
 
-import { Result, User } from '../../types';
+import { Example, Result, User } from '../../types';
 import { getElapsedTime } from '../../utilities';
 
 interface SortUsersByLastName {
@@ -17,7 +17,7 @@ export const sortUsersByLastNameWithJS: SortUsersByLastName = (
   ({lastName: lastNameA}, {lastName: lastNameB}) => lastNameA.localeCompare(lastNameB)
 );
 
-export const sortingExample = (users: Array<User>): Result => {
+export const sortByLastNameAlphabetical: Example = (users: Array<User>): Result => {
   const lodashStartTime = performance.now();
   sortUsersByLastNameWithLodash(users);
   const lodashEndTime = performance.now();

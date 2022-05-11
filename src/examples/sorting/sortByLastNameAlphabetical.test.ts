@@ -1,10 +1,9 @@
 import { users } from '../../index';
-import { sortingExample } from './sortingExample';
+import { sortByLastNameAlphabetical } from './sortingExample';
 
 describe('sortingExample', () => {
   it('sorts with two methods', () => {
-    const result = sortingExample(users);
-    console.warn('RESULT', result);
+    const result = sortByLastNameAlphabetical(users);
     const {
       jsTime,
       lodashTime,

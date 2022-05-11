@@ -1,9 +1,17 @@
+/* eslint-disable */
+
+/**
+ * This file is a "special case" as we're running it from root.
+ * 
+ * The imports are a bit odd and we are not running tests on it.
+ */
+
 import axios from 'axios';
+import { writeFileSync } from 'fs';
 import lodash from 'lodash';
 import path from 'path';
-import {fileURLToPath} from 'url';
 import { User } from 'types';
-import { writeFileSync } from 'fs';
+import {fileURLToPath} from 'url';
 
 const {
   map,
@@ -17,15 +25,15 @@ console.log('Generating user data...');
 const getPWD = () => {
   const __filename = fileURLToPath(import.meta.url);
   return path.dirname(__filename);
-}
+};
 
 const getOutputPath = (filename: string) => path.join(
   getPWD(),
   '../../../data',
   filename
-)
+);
 
-export const generateUserData = (url: string) => async () => {
+const generateUserData = (url: string) => async () => {
   const response = await axios.get(url);
   return response.data.data as unknown as Array<string>;
 };
@@ -52,7 +60,7 @@ const getRandomSurname = (
   const n = size(surnames);
   const i = random(0, n);
   return surnames[i];
-}
+};
 
 interface GenerateFullNames {
   (surnames: Array<string>): (firstNames: Array<string>) => Array<User>
@@ -64,8 +72,8 @@ const generateFullNames: GenerateFullNames = (
   firstNames
 ) => map(firstNames, firstName => ({
   firstName,
-  lastName: getRandomSurname(surnames)
-}))
+  lastName: getRandomSurname(surnames),
+}));
 
 const generateUserJSON = async () => {
   const fileName = 'users.json';
@@ -82,6 +90,6 @@ const generateUserJSON = async () => {
   const users = union(maleNamedUsers, femaleNamedUsers);
   const outputPath = getOutputPath(fileName);
   writeFileSync(outputPath, JSON.stringify(users));
-}
+};
 
 generateUserJSON().then(finished);

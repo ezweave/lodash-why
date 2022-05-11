@@ -10,6 +10,7 @@ module.exports = {
       '!<rootDir>/__fixtures__/**/*.ts',
       '!<rootDir>/test/**/*.ts',
       '!<rootDir>/dist/**/*.ts',
+      '!<rootDir>utilities/generators/files/generateUserJSON.ts'
     ],
     coverageThreshold: {
       global: {
@@ -37,6 +38,9 @@ module.exports = {
     transform: {
       '^.+\\.(ts|tsx)$': 'ts-jest'
     },
+    testPathIgnorePatterns: [
+      '!<rootDir>utilities/generators/files/generateUserJSON.ts'
+    ],
     testMatch: [
       '<rootDir>/**/?(*.)(spec|test).ts?(x)'
     ]

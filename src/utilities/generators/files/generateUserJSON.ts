@@ -10,8 +10,8 @@ import axios from 'axios';
 import { writeFileSync } from 'fs';
 import lodash from 'lodash';
 import path from 'path';
-import { User } from 'types';
 import {fileURLToPath} from 'url';
+import { User } from '../../../types';
 
 const {
   map,

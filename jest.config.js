@@ -25,7 +25,7 @@ module.exports = {
       }
     },
     moduleNameMapper: {
-      '@generator/(.*)': '<rootDir>/$1',
+      '@why/(.*)': '<rootDir>/src/$1',
     },
     moduleFileExtensions: [
       'ts',

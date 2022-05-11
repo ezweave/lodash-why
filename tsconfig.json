@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "allowJs": false,
-    "baseUrl": "src",
+    "baseUrl": "./",
     "checkJs": false,
     "declaration": true,
     "esModuleInterop": true,
@@ -21,7 +21,7 @@
     "resolveJsonModule": true
   },
   "include": [
-    "./src/**/*"
+    "./src/*"
   ],
   "exclude": [
     "dist",
@@ -29,6 +29,6 @@
     "node_modules/@types/*"
   ],
   "paths": {
-    "@why/*": ["*"]
+    "@why/*": ["./src/*"]
   }
 }

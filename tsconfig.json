@@ -6,10 +6,9 @@
     "declaration": true,
     "lib": [
       "es6",
-      "dom",
       "esnext"
     ],
-    "module": "esnext",
+    "module": "es2022",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -17,7 +16,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es6",
+    "target": "es2017",
     "resolveJsonModule": true,
     "esModuleInterop": true
   },

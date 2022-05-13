@@ -1,4 +1,4 @@
-import { sum, times } from 'lodash';
+import { size, sum, times } from 'lodash';
 import { performance } from 'perf_hooks';
 
 import { ExampleFunction, Result, SolutionIdiom, User } from '../../types';
@@ -41,6 +41,7 @@ export const runner = <T>(
     jsTime,
     lodashTime,
     numberOfRuns,
+    entrySetSize: size(users),
     winner,
   };
 };

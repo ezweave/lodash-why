@@ -4,7 +4,7 @@ import { flatMap, flow, map, random, size, union } from 'lodash';
 
 import { Address } from '../../../types';
 
-const cities = City.getCitiesOfCountry('US') || [];
+const cities = City.getCitiesOfCountry('US') as unknown as Array<ICity>;
 
 export const getRandomCity = flow(
   () => size(cities),

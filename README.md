@@ -8,6 +8,7 @@ Dear reader, you've stumbled onto a little project I built to compare [`lodash`]
 * [Running](#running)
 * [Caveat Emptor](#caveat-emptor)
 * [Generating New Data](#generate-new-data)
+* [Contributions](#contrbutions)
 ## Introduction
 
 I've heard an assertion in debates about JavaScript style that I wanted to either debunk or prove:
@@ -65,6 +66,13 @@ The project is populated with test data, but if you need to generate a new list 
 ```shell
 yarn generate.users
 ```
+
+[Table of Contents](#table-of-contents)
+
+
+# Contrbutions
+
+If you would like to add more tests, talk shit on the tests I wrote, or submit ASCII based [Fist of the North Star](https://www.amazon.com/Fist-North-Star-Toyoo-Ashida/dp/B074XJPSDL) (the movie, not the manga or shitty series) slash fiction, feel free to fork this project and submit a PR.
 
 
 [Table of Contents](#table-of-contents)
